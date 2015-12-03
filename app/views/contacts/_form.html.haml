@@ -1,0 +1,18 @@
+= form_for @contact do |f|
+  = if @contact.errors.any?
+    .Error_explanation
+      %h2
+        = pluralize(@contact.errors.count, "error")
+        prevented this article from being saved:
+      - @contact.errors.full_messages.each do |msg|
+        %li= msg
+  = f.label :first_name
+  = f.text_field :first_name
+  %p
+  = f.label :last_name
+  = f.text_field :last_name
+  %p
+  = f.label :birthday
+  = f.date_field :birthday
+  %p
+  = f.submit

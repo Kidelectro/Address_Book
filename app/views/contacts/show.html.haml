@@ -1,0 +1,10 @@
+%h1 Showing contacts
+Adding this contact:
+%b Name
+= @contact.first_name
+= @contact.last_name
+%b Birthday
+= @contact.birthday
+= link_to 'Edit', edit_contact_path(@contact)
+%p
+= link_to 'Home', contacts_path

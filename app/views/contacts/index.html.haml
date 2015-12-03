@@ -1,0 +1,12 @@
+%h1 Contacts
+- @contacts.each do |contact|
+  .contact
+  = contact.first_name
+  = contact.last_name
+  = contact.birthday
+  = link_to 'Show', contact_path(contact)
+  = link_to 'Edit', edit_contact_path(contact)
+  = link_to 'Delete', contact_path(contact), method: :delete,
+    data: {confirm: 'Are you sure?'}
+%p
+= link_to 'New Contact', new_contact_path
