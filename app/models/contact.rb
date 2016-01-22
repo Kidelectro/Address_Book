@@ -1,3 +1,3 @@
 class Contact < ActiveRecord::Base
-  validates :first_name, , :last_name, :birthday, presence: true
+  validates :first_name, :last_name, :birthday, presence: true
 end
