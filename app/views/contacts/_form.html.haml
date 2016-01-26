@@ -15,4 +15,10 @@
   = f.label :birthday
   = f.date_field :birthday
   %p
+  = f.fields_for :phone_numbers do |n|
+    = n.label :phone_type
+    = n.select :phone_type, PhoneNumber::PHONE_TYPE
+    = n.label :number
+    = n.text_field :number
+    %p
   = f.submit

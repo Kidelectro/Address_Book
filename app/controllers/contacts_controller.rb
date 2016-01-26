@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    3.times { @contact.phone_numbers.build }
   end
 
   def create
@@ -42,7 +43,9 @@ class ContactsController < ApplicationController
   def contact_params
     params.require(:contact).permit(:first_name,
                                     :last_name,
-                                    :birthday)
+                                    :birthday,
+                                    {:phone_numbers_attributes => [:number, :phone_type, :contact_id]}
+                                    )
   end
 
   def set_contact
