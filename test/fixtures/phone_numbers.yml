@@ -2,10 +2,8 @@
 
 one:
   phone_type: MyString
-  string: MyString
   number: 1
 
 two:
   phone_type: MyString
-  string: MyString
   number: 1
