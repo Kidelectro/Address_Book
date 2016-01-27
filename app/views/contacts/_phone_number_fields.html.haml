@@ -1,0 +1,8 @@
+= f.label :phone_type
+= f.select :phone_type, PhoneNumber::PHONE_TYPE
+= f.label :number
+= f.text_field :number
+-if f.object.number.present?
+  = f.check_box :_destroy
+  = f.label :_destroy, "Delete Number"
+%p

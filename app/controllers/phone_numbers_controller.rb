@@ -26,7 +26,7 @@ class PhoneNumbersController < ApplicationController
   end
 
   def destroy
-
+    @phonenumber.destroy
   end
 
   private
