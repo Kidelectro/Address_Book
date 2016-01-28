@@ -1,16 +1,30 @@
 %h1 Showing contacts
 
-%b Name
+%h3
+  %u Name
 = @contact.first_name
 = @contact.last_name
-%b Birthday
+%p
+%h3
+  %u Birthday
 = @contact.birthday
 %p
-%b Phone Numbers
+%h3
+  %u Phone Numbers
 - @contact.phone_numbers.each do |num|
   %p
   %b= num.phone_type
   = num.number
+%p
+%h3
+  %u Addresses
+%p
+- @contact.addresses.each do |addr|
+  %b= addr.address_type
+  = addr.street
+  = addr.city
+  = addr.state
+  = addr.zip
 %p
 = link_to 'Edit', edit_contact_path(@contact)
 %p

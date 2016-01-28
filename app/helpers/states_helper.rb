@@ -1,4 +1,4 @@
-module UsaHelper
+module StatesHelper
 
 def us_states
   [
