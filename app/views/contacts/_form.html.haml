@@ -20,4 +20,9 @@
   %p
   = link_to_add_fields "Add Phone Number", f, :phone_numbers
   %p
+  = f.fields_for :addresses do |n|
+    = render 'address_fields', f: n
+  %p
+  = link_to_add_fields "Add Address", f, :addresses
+  %p
   = f.submit

@@ -43,7 +43,14 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:first_name,
                                     :last_name,
                                     :birthday,
-                                    {:phone_numbers_attributes => [:id, :number, :phone_type, :contact_id, :_destroy]}
+                                    {:phone_numbers_attributes => [:id, :number,
+                                                                   :phone_type,
+                                                                   :contact_id,
+                                                                   :_destroy] },
+                                    {:addresses_attributes => [:id, :street, :state,
+                                                               :zip, :contact_id,
+                                                               :address_type, :city,
+                                                               :_destroy] }
                                     )
   end
 
